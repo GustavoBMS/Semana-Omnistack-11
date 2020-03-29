@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//Importação do React e useState
+import React, {useState} from 'react';
+
+import Header from './Header';
 
 function App() {
+  //Quando utilizado o useState, é gerado um array de 2 valores, [valor(var), funcaoDeAtualizacao]
+  //No primeiro valor do array fica o nome da variavel, o segundo a função responsavel por modificar a variavel
+  //É utilizado um intermediario para modificar a variavel, ela nao e alterada diretamente
+  //Sempre que um componente precisa armazenar um dado deve ser criado um estado, pois so assim pode ser alterado
+  const [counter, setCounter] = useState(0);
+
+  function increment(){
+    setCounter(counter + 1);
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Salve Salve a Todos!
-        </a>
-      </header>
+    <div>
+      {/*Utiliza o Header importado*/} 
+      <Header> Contador: {counter} </Header>
+      <button onClick={increment}>Incrementar</button>
     </div>
   );
 }
