@@ -15,4 +15,3 @@ app.use(express.json());
 app.use(routes);
 //Utiliza o cors, faz com que o front utilize o back?
 app.use(cors);
-

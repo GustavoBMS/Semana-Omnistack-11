@@ -33,8 +33,6 @@ module.exports = {
         });
         //Como o insert pode demorar, a funcao deve ser assincrona e o Insert em si deve ter um await para poder esperar a execucao terminar para poder continuar, explicacao vaga deve melhorar
 
-        console.log(data);
-
         return response.json({ id });
     },
 
