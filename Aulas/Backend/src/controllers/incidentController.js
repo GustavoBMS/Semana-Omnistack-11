@@ -9,7 +9,6 @@ module.exports = {
 
         //Variavel para contar os campos
         const [count] = await connection('incidents').count()
-        //console.log(count);
 
         //Efetua a paginação da rota
         const incidents = await connection('incidents')
